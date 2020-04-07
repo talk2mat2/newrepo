@@ -3,48 +3,50 @@ var data =[ {'principal':2500,'time':1.8},
     'time':1}, {'principal':2500,'time':3} ];
 
 /**the function below takes an array as a single argument
-and returns an array of objects called 'interestData' **/
+and returns an array of objects called 'interestData'
+we loop through the array items to calculate for each 
+indiividual objects**/
 
 
 function interestCalculator(data){
     var interestData= [];
     var rate = 0
-    for(var err=0;err<data.length;err++){
-    if(data[err].principal>=2500 && data[err].time>1 && data[err].time<3){
+    for(var items=0;items<data.length;items++){
+    if(data[items].principal>=2500 && data[items].time>1 && data[items].time<3){
     rate =3;
-    var interest= (data[err].principal*data[err].time*rate)/100;
-    data[err].rate=rate;
-    data[err].interest=interest;
-    interestData.push(data[err]);
+    var interest= (data[items].principal*data[items].time*rate)/100;
+    data[items].rate=rate;
+    data[items].interest=interest;
+    interestData.push(data[items]);
 
 
     }
-    else if (data[err].principal>=2500 && data[err].time>=3){
+    else if (data[items].principal>=2500 && data[items].time>=3){
     rate =4;
-    var interest= (data[err].principal*data[err].time*rate)/100;
-    data[err].rate=rate;
-    data[err].interest=interest;
-    interestData.push(data[err]);
+    var interest= (data[items].principal*data[items].time*rate)/100;
+    data[items].rate=rate;
+    data[items].interest=interest;
+    interestData.push(data[items]);
 
 
     }
-    else if (data[err].principal<2500 || data[err].time<=1){
+    else if (data[items].principal<2500 || data[items].time<=1){
     rate =2;
-    var interest= (data[err].principal*data[err].time*rate)/100;
-    data[err].rate=rate;
-    data[err].interest=interest;
-    interestData.push(data[err]);
+    var interest= (data[items].principal*data[items].time*rate)/100;
+    data[items].rate=rate;
+    data[items].interest=interest;
+    interestData.push(data[items]);
     }  
     else {rate=1
-    var interest= (data[err].principal*data[err].time*rate)/100;
-    data[err].rate=rate;
-    data[err].interest=interest;
-    interestData.push(data[err]);
+    var interest= (data[items].principal*data[items].time*rate)/100;
+    data[items].rate=rate;
+    data[items].interest=interest;
+    interestData.push(data[items]);
     }
 
     }console.log('interestdata =')
     console.log( interestData);
-    return(interestData);
+    return interestData;
 };
 
 
